@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MachineName, MachineState } from '../services/machines-line.service';
+import { MachineName, MachinesLineService, MachineState } from '../services/machines-line.service';
 
 @Component({
   selector: 'app-overview',
@@ -9,9 +9,8 @@ import { MachineName, MachineState } from '../services/machines-line.service';
 export class OverviewComponent implements OnInit {
   MachineNames = Object.values(MachineName);
   MachineState = MachineState;
-  constructor() { }
+  constructor(public service: MachinesLineService) { }
 
   ngOnInit(): void {
   }
-
 }

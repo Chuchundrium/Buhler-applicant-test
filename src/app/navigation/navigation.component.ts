@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MachineName, MachineState } from '../services/machines-line.service';
+import { MachineName, MachinesLineService, MachineState } from '../services/machines-line.service';
 
 @Component({
   selector: 'app-navigation',
@@ -7,12 +7,11 @@ import { MachineName, MachineState } from '../services/machines-line.service';
   styleUrls: ['./navigation.component.scss']
 })
 export class NavigationComponent implements OnInit {
-  MachineNames = Object.values(MachineName);
+  MachineName = MachineName;
   MachineState = MachineState;
 
-  constructor() { }
+  constructor(public service: MachinesLineService) { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {  }
 
 }

@@ -1,7 +1,7 @@
 <overview-item
-  *ngFor="let machineName of MachineNames; let isLast = last"
-  [name]="machineName"
-  [state]="MachineState.RUNNING"
-  [ngClass]="MachineState.RUNNING"
+  *ngFor="let machineData of (service.machinesData$ | async); let isLast = last"
+  [name]="machineData.name"
+  [state]="machineData.state"
+  [ngClass]="machineData.state"
   [class.not-last]="!isLast"
 ></overview-item>

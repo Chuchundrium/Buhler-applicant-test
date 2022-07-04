@@ -1,6 +1,6 @@
 <nav-item
-  *ngFor="let machineName of MachineNames"
-  [name]="machineName"
-  [state]="MachineState.RUNNING"
-  [ngClass]="MachineState.RUNNING">
+  *ngFor="let machineData of (service.machinesData$ | async)"
+  [name]="machineData.name"
+  [state]="machineData.state"
+  [ngClass]="machineData.state">
 </nav-item>
