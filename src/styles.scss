@@ -13,3 +13,30 @@ body {
 }
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.running, .alarm, .warning {
+  position: relative;
+  .material-icons-outlined {
+    font-size: 18px;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+  }
+}
+.running {
+  .material-icons-outlined {
+    color: var(--running);
+  }
+}
+
+.alarm {
+  background-color: var(--alarm);
+}
+
+.warning {
+  background-color: var(--warning);
+}
+
+.warning, .alarm {
+  color: white;
+}
