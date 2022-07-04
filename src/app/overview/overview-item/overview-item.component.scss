@@ -1,0 +1,24 @@
+$height: 160px;
+
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 200px;
+  gap: 10px;
+  height: $height;
+
+  &.not-last:after {
+    content: '';
+    position: absolute;
+    top: calc(#{$height} / 2);
+    left: 100%;
+    border-top: var(--primary) 4px solid;
+    width: 50px;
+}
+  .name-icon {
+    font-size: 48px;
+  }
+}

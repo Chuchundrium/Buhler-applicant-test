@@ -16,25 +16,25 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .running, .alarm, .warning {
   position: relative;
-  .material-icons-outlined {
-    font-size: 18px;
+  .state-icon {
     position: absolute;
     top: 5px;
     right: 5px;
   }
 }
 .running {
-  .material-icons-outlined {
+  background-color: var(--primary-background);
+  .state-icon {
     color: var(--running);
   }
 }
 
 .alarm {
-  background-color: var(--alarm);
+  background-color: var(--alarm-background);
 }
 
 .warning {
-  background-color: var(--warning);
+  background-color: var(--warning-background);
 }
 
 .warning, .alarm {

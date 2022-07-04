@@ -1,0 +1,7 @@
+<overview-item
+  *ngFor="let machineName of MachineNames; let isLast = last"
+  [name]="machineName"
+  [state]="MachineState.RUNNING"
+  [ngClass]="MachineState.RUNNING"
+  [class.not-last]="!isLast"
+></overview-item>
