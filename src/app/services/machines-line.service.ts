@@ -1,6 +1,11 @@
 import { interval, map, Observable, share } from 'rxjs';
 import { Injectable } from '@angular/core';
 
+export interface MashineData {
+  name: MachineName;
+  state: MachineState
+}
+
 export enum MachineName {
   SCALE = 'Scale',
   ATTACHER = 'Attacher',
@@ -23,9 +28,13 @@ export const MachineStateIcon = {
   providedIn: 'root',
 })
 export class MachinesLineService {
-  public machinesData$: Observable<
-    { name: MachineName; state: MachineState }[]
-  > = interval(3000).pipe(
+  // Generating of mock data to reproduce a behaviour of real-time app
+  //
+  // In a regular case could be:
+  // * fetching data from backend via socket in a json way
+  // * parsing it (with type modify if necessary)
+
+  public machinesData$: Observable<MashineData[]> = interval(3000).pipe(
     map(() => {
       const data = [
         { name: MachineName.SCALE, state: this.getRandomState() },

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { MachineName, MachineState, MachineStateIcon } from '../../services/machines-line.service';
 
 export const MachineNameIcon = {
@@ -13,15 +13,11 @@ export const MachineNameIcon = {
   templateUrl: './overview-item.component.html',
   styleUrls: ['./overview-item.component.scss']
 })
-export class OverviewItemComponent implements OnInit {
+export class OverviewItemComponent {
   @Input() name: MachineName = MachineName.SCALE;
   @Input() state: MachineState = MachineState.RUNNING;
   MachineStateIcon = MachineStateIcon;
   MachineNameIcon = MachineNameIcon;
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  constructor() {}
 }
